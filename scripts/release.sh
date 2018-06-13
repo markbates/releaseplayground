@@ -68,9 +68,8 @@ git log
 
 echo $REVERTS
 
-for sha in $REVERTS
-do
-  git revert $sha
+for (( idx=${#REVERTS[@]}-1 ; idx>=0 ; idx-- )) ; do
+    git revert ${REVERTS[idx]}
 done
 
 git push origin $DEV_BRANCH
