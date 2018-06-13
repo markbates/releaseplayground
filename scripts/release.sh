@@ -55,6 +55,10 @@ git add $VERSION_FILE
 git commit $VERSION_FILE -m "version bump $VERSION"
 REVERTS+=$(git rev-parse --verify HEAD)
 
+git tag $VERSION
+git push origin master
+git push origin --tags
+
 # ---
 # go back to development
 
