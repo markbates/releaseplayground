@@ -7,5 +7,5 @@ import "github.com/gobuffalo/packr"
 // You can use the "packr clean" command to clean up this,
 // and any other packr generated files.
 func init() {
-		packr.PackJSONBytes("./templates", "b.txt", "\"dGhpcyBpcyBiLnR4dAo=\"")
+		packr.PackJSONBytes("./templates", "b.txt", "\"dGhpcyBpcyBiLnR4dAptb3JlIGIgdGV4dAo=\"")
 }
