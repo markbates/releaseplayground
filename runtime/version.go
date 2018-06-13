@@ -1,3 +1,3 @@
 package runtime
 
-const Version = "development"
+const Version = "v1.0.3"
