@@ -37,8 +37,7 @@ then
   git checkout master
 fi
 
-# git rebase development
-
+git rebase development
 
 REVERTS=()
 
@@ -66,3 +65,10 @@ git branch -D $DEV_BRANCH
 git checkout -b $DEV_BRANCH
 
 echo $REVERTS
+
+for sha in $REVERTS
+do
+  git revert $sha
+done
+
+git push origin $DEV_BRANCH
