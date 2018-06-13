@@ -46,13 +46,13 @@ packr
 git add *-packr.go
 git add **/*-packr.go
 git commit **/*-packr.go *-packr.go * -m "committed packr files"
-REVERTS+=$(git rev-parse --verify HEAD)
+REVERTS+=$(git rev-parse --short HEAD)
 
 sed -i "s/Version = \".*\"/Version = \"$VERSION\"/" $VERSION_FILE
 cat $VERSION_FILE
 git add $VERSION_FILE
 git commit $VERSION_FILE -m "version bump $VERSION"
-REVERTS+=$(git rev-parse --verify HEAD)
+REVERTS+=$(git rev-parse --short HEAD)
 
 git tag $VERSION
 git push origin master
@@ -63,6 +63,8 @@ git push origin --tags
 
 git branch -D $DEV_BRANCH
 git checkout -b $DEV_BRANCH
+
+git log
 
 echo $REVERTS
 
